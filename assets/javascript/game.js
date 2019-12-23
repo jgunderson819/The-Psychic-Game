@@ -9,64 +9,51 @@ var guesses = 10;
 
 // Create variables that hold references to the places in the HTML where we want to display things.
 
-var directionsText = GetElementById("directions-text")
-var winsText = GetElementById("wins-text")
-var lossesText = GetElementById("losses-text")
-var guessesleft = GetElementById("guessesleft-text")
-var guessessofarText = GetElementById("guessessofar-text")
-
+var directionsText = "Pick a letter"
+var winsText = document.getElementById("wins-text");
+var lossesText = document.getElementById("losses-text");
+var guessesleftText = document.getElementById("guessesleft-text");
+var guessessofarText = document.getElementById("guessessofar-text");
+var i;
+var userGuess;
+var computerGuess;
+var guessessoFar
 
  // This function is run whenever the user presses a key.
+ for (i=1; i < 11; i++) {
  document.onkeyup = function(event) {
 
     // Determines which key was pressed.
     var userGuess = event.key;
 
     // Randomly chooses a choice from the options array. This is the Computer's guess.
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    var computerGuess = computerChoices[Math.floor(Math.random()) * (computerChoices.length)];
 
-    guessessofarText.push(userGuess)
+    var guessessoFarText = [""]
+    guessessoFarText = guessessoFarText.push(userGuess)};
 
     // This logic determines the outcome of the game (win/loss/another guess), and increments the appropriate number
-    if userGuess === computerGuess; wins++:
+    if (userGuess === computerGuess) {
+     wins++;
 
-
-    else
-        alert("Try again")
+    }
+    else  {
+        alert("Try again");
    
+    }
+
       // Hide the directions
-      directionsText.textContent = "";
+      directionsText =  document.getElementById("directions-text").innerHTML = "";
+     // directionsText.textContent = "";
 
       // Display the wins, losses guesses left, and guesses so far
-     winsText =  "Wins  " + wins
-     lossesText = "Losses  " + losses
-     guessesleftText = " Guesses Left  " + (guessesleft -(GuessessoFar.length))
-    
-    
+    var html =
+    "<p> Wins " + wins + "</p>"
+    "<p> Losses " + losses + "</p>"
+    "<p> Guesses Left "+ (10-i) + "</p>"
+    "<p> Guesses So Far " + guessessoFarText(i-1) + "</p>"
+
+    document.getElementById.innerHTML = html;
   };
-var computer = Math.floor(Math.random() * 26);
 
 
-
-for (i=1; i<11; i++) 
-document.onkeyup = function(event) {
-var userguess = alert "What is your guess"
-
-function myfunction 
-if  userguess == choices(computer) {
-
-document.write ("You Win!");
-wins++;
-
-else
-guesses++;
-document.write ("Try again");
-
-}
-
-document.write ("You lose!");
-losses++
-
-
-
-}
