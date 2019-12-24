@@ -13,7 +13,7 @@ var directionsText = "Pick a letter"
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var guessesleftText = document.getElementById("guessesleft-text");
-var guessessofarText = document.getElementById("guessessofar-text");
+var guessessoFarText = document.getElementById("guessessofar-text");
 var i;
 var userGuess;
 var computerGuess;
@@ -27,10 +27,9 @@ var guessessoFar
     var userGuess = event.key;
 
     // Randomly chooses a choice from the options array. This is the Computer's guess.
-    var computerGuess = computerChoices[Math.floor(Math.random()) * (computerChoices.length)];
-
-    var guessessoFarText = [""]
-    guessessoFarText = guessessoFarText.push(userGuess)};
+    var computerGuess = computerChoices[Math.floor(Math.random()) * (computerChoices.length)]
+   
+    guessessoFarText.push(userGuess)};
 
     // This logic determines the outcome of the game (win/loss/another guess), and increments the appropriate number
     if (userGuess === computerGuess) {
@@ -51,7 +50,7 @@ var guessessoFar
     "<p> Wins " + wins + "</p>"
     "<p> Losses " + losses + "</p>"
     "<p> Guesses Left "+ (10-i) + "</p>"
-    "<p> Guesses So Far " + guessessoFarText(i-1) + "</p>"
+    "<p> Guesses So Far " + document.getElementById(guessessofar-text).innerHTML = guessessoFarText + "</p>"
 
     document.getElementById.innerHTML = html;
   };
