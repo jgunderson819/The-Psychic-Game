@@ -17,19 +17,21 @@ var guessessoFarText = document.getElementById("guessessofar-text");
 var i;
 var userGuess;
 var computerGuess;
-var guessessoFar
+var guessessoFar;
 
  // This function is run whenever the user presses a key.
  for (i=1; i < 11; i++) {
  document.onkeyup = function(event) {
 
-    // Determines which key was pressed.
-    var userGuess = event.key;
+    // Determines which key was pressed and save it to a variable
+    var userGuess = event.key.toLowerCase();
 
     // Randomly chooses a choice from the options array. This is the Computer's guess.
     var computerGuess = computerChoices[Math.floor(Math.random()) * (computerChoices.length)]
    
-    guessessoFarText.push(userGuess)};
+
+    // 
+    guessessoFarText.push(userGuess);
 
     // This logic determines the outcome of the game (win/loss/another guess), and increments the appropriate number
     if (userGuess === computerGuess) {
@@ -50,7 +52,7 @@ var guessessoFar
     "<p> Wins " + wins + "</p>"
     "<p> Losses " + losses + "</p>"
     "<p> Guesses Left "+ (10-i) + "</p>"
-    "<p> Guesses So Far " + document.getElementById(guessessofar-text).innerHTML = guessessoFarText + "</p>"
+    "<p> Guesses So Far " + guessessoFarText + "</p>"
 
     document.getElementById.innerHTML = html;
   };
