@@ -10,12 +10,11 @@
   // Computer makes random selection
 
   function computerSelect() {
-    var num = Math.floor(Math.random()*26);
-        ComputerPick = computerChoices[num];
+    var computerPick = computerChoices[Math.floor(Math.random()*computerChoices.length)];
   }
 // Run the computerSelect function
   computerSelect()
-  console.log(num)
+  
   console.log(computerPick)
   // Starting displays for the game
   document.getElementById("directions-text").innerHTML = "Pick a letter";
@@ -45,7 +44,7 @@
   //This function runs whenever user presses a key
     document.onkeyup = function(event) {
 
-      var userGuess = event.key.toLowerCase()
+      var userGuess = string.fromCharCode.toLowerCase();
       guessessoFar.push(userGuess)
 
       console.log (userGuess)
