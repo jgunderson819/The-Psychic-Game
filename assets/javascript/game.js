@@ -7,29 +7,30 @@
   var losses = 0;
   var guessesRemaining = 10;
   var guessessoFar = [];
-  // Computer makes random selection
+  var computerPick
 
-  function computerSelect() {
-    var computerPick = computerChoices[Math.floor(Math.random()*computerChoices.length)];
-  }
-// Run the computerSelect function
-  computerSelect()
   
-  console.log(computerPick)
+
   // Starting displays for the game
-  document.getElementById("directions-text").innerHTML = "Pick a letter";
-    function display() {
-    document.getElementById("wins-text").innerHTML = "Wins:  " + wins;
-    document.getElementById("losses-text").innerHTML = "Losses:  " + losses;
-    document.getElementById("guessesleft-text").innerHTML = "Guesses Left: " + GuessesRemaining;
-    document.getElementById("guessessofar-text").innerHTML = "Guesses so far: " + GuessessoFar;
-    } display()
+  function display() {
+ var displayer = "<p>Wins:  " + wins +"</p>" +
+            "<p>Losses:  " + losses + "</p>" +
+            "<p>Guesses Left:  " + guessesRemaining + "</p>" +
+            "<p>Guesses so far:  " + guessessoFar.toString() + "</p>"
+
+            document.querySelector("#game").innerHTML = displayer
+  }
 
   //  Functions
 
+  // Computer makes random selection 
+  function computerSelect() {
+  var computerPick = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+  }
+
   function winGame() {
     wins++;
-    document.getElementById("directions-text").innerHTML = "You won, let's play again";
+    document.write ("You won, let's play again");
     guessessoFar = [];
     computerSelect()
   }
@@ -44,14 +45,12 @@
   //This function runs whenever user presses a key
     document.onkeyup = function(event) {
 
-      var userGuess = string.fromCharCode.toLowerCase();
+      var userGuess = event.key.toLowerCase();
       guessessoFar.push(userGuess)
-
-      console.log (userGuess)
-      console.log(guessessoFar)
-    
-      console.log (num)
-      if (userGuess === computerPick) {
+   
+      console.log(computerPick)
+      
+      if (userGuess == computerPick) {
         winGame();
       }
       else {
