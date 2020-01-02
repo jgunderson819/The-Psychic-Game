@@ -7,7 +7,7 @@
   var losses = 0;
   var guessesRemaining = 10;
   var guessessoFar = [];
-  var computerPick
+  var computerPick = computerChoices[Math.floor(Math.random()*computerChoices.length)]
 
   
 
@@ -25,28 +25,31 @@
 
   // Computer makes random selection 
   function computerSelect() {
-  var computerPick = computerChoices[Math.floor(Math.random()*computerChoices.length)];
-  }
+    var computerPick1 = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+    computerPick = computerPick1
+    }
 
   function winGame() {
     wins++;
-    document.write ("You won, let's play again");
+    alert("You won, let's play again");
     guessessoFar = [];
-    computerSelect()
+    guessesRemaining = 10;
+    computerSelect();
   }
 
   function loseGame() {
     losses++;
-    guessesRemaining = 10
-    guessessoFar = []
-    computerSelect()
+    alert("you lost, let's try again.")
+    guessesRemaining = 10;
+    guessessoFar = [];
+    computerSelect();
   }
 
   //This function runs whenever user presses a key
     document.onkeyup = function(event) {
 
       var userGuess = event.key.toLowerCase();
-      guessessoFar.push(userGuess)
+      guessessoFar.push(userGuess);
    
       console.log(computerPick)
       
