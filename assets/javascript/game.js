@@ -51,7 +51,7 @@
       var userGuess = event.key.toLowerCase();
       guessessoFar.push(userGuess);
    
-      console.log(computerPick)
+    
       
       if (userGuess == computerPick) {
         winGame();
